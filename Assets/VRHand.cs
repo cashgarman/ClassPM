@@ -11,10 +11,13 @@ public class VRHand : MonoBehaviour
     private GameObject selectedObject;
     private Material selectedObjectMaterial;
     private Color selectedObjectOriginalColor;
+    // private GameObject grabbedObject;
+    private FixedJoint fixedJoint;
 
     private void Start()
     {
         handMesh = GetComponent<MeshRenderer>();
+        fixedJoint = GetComponent<FixedJoint>();
         originalColor = handMesh.material.color;
     }
 
@@ -24,11 +27,25 @@ public class VRHand : MonoBehaviour
 	    {
 			triggerHeld = true;
 			handMesh.material.color = Color.green;
+
+			if (selectedObject != null)
+			{
+				// fixedJoint.connectedBody = selectedObject.GetComponent<Rigidbody>();
+				selectedObject.transform.SetParent(transform);
+				selectedObject.GetComponent<Rigidbody>().isKinematic = true;
+			}
 	    }
 	    else if(Input.GetAxis(triggerName) < 0.8f && triggerHeld)
 	    {
 		    triggerHeld = false;
 		    handMesh.material.color = originalColor;
+		    
+		    if (selectedObject != null)
+		    {
+			    // fixedJoint.connectedBody = null;
+			    selectedObject.GetComponent<Rigidbody>().isKinematic = false;
+			    selectedObject.transform.SetParent(null);
+		    }
 	    }
     }
 
