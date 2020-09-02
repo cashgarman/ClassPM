@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Wrist4" size="0.050000 0.047476" />
+    <ImageTarget name="wrist3" size="0.050000 0.041743" />
+    <ImageTarget name="wrist2" size="0.070000 0.063317" />
+    <ImageTarget name="wrist" size="0.050000 0.043231" />
+    <ImageTarget name="skull_heart" size="0.055000 0.063883" />
+    <ImageTarget name="clockface" size="0.050000 0.053559" />
+    <ImageTarget name="hack_the_planet" size="1.000000 0.721566" />
+    <ImageTarget name="computer" size="1.000000 0.655000" />
+    <ImageTarget name="welcome_to_ar" size="1.000000 0.676806" />
+    <ImageTarget name="hello_smiley" size="1.000000 0.700608" />
+  </Tracking>
+</QCARConfig>
