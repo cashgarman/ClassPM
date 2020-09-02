@@ -139,7 +139,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.035, y: 0, z: 0.0316585}
+      m_Extent: {x: 0.025, y: 0, z: 0.023738}
   m_Shapes:
     vertices: []
     shapes: []
@@ -218,7 +218,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: cdccccbc000000003276c2bc000000000000803f000000000000000000000000cdccccbc000000003276c23c000000000000803f00000000000000000000803fcdcccc3c000000003276c2bc000000000000803f000000000000803f00000000cdcccc3c000000003276c23c000000000000803f000000000000803f0000803f
+    _typelessdata: ae47e1bc0000000017d502bd00000000ffff7f3f000000000000000000000000ae47e1bc0000000017d5023d00000000ffff7f3f00000000000000000000803fae47e13c0000000017d502bd00000000ffff7f3f000000000000803f00000000ae47e13c0000000017d5023d00000000ffff7f3f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -663,7 +663,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Wrist4Material
+  m_Name: 'skull_heartMaterial
 
     -21122'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -678,7 +678,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2c5e771ffa4347b18ddf2ad055d4e83d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f6d72db6b084bb19d8490534578295f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -970,13 +970,13 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Wrist4
+  mTrackableName: skull_heart
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/VuforiaTest.xml
-  mAspectRatio: 0.94952
+  mAspectRatio: 1.161509
   mImageTargetType: 0
-  mWidth: 0.05
-  mHeight: 0.047476
+  mWidth: 0.055
+  mHeight: 0.063883
   mRuntimeTexture: {fileID: 0}
 --- !u!4 &1563587463
 Transform:

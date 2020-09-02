@@ -250,6 +250,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &498413182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1833650560103160, guid: bf10119c08c2070419667e55aee3c0c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1262239175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &498413183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498413182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2972928f4b195364a8bf70391346e31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: Right Grip
+  holdTriggerName: Right Trigger
 --- !u!1 &686975321
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1064493181
 Transform:
   m_ObjectHideFlags: 0
@@ -573,6 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerName: Right Trigger
+  holdTriggerName: 
 --- !u!138 &1156473660
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -695,6 +716,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1262239175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1833650560103160, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_Name
+      value: ESNASFT VR R Hands Misty
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876591861240656, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95340636113049686, guid: bf10119c08c2070419667e55aee3c0c3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d3402bcae14e9394bb02af7e67984577, type: 2}
+    - target: {fileID: 111127334536284510, guid: bf10119c08c2070419667e55aee3c0c3,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf10119c08c2070419667e55aee3c0c3, type: 3}
 --- !u!1 &1366172655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2077521819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerName: Left Trigger
+  holdTriggerName: 
 --- !u!138 &2116326590
 FixedJoint:
   m_ObjectHideFlags: 0

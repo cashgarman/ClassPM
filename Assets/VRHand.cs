@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class VRHand : MonoBehaviour
@@ -13,40 +14,50 @@ public class VRHand : MonoBehaviour
     private Color selectedObjectOriginalColor;
     // private GameObject grabbedObject;
     private FixedJoint fixedJoint;
+    
+    private Animator animator;
+    public string holdTriggerName;
 
     private void Start()
     {
-        handMesh = GetComponent<MeshRenderer>();
-        fixedJoint = GetComponent<FixedJoint>();
-        originalColor = handMesh.material.color;
+        // handMesh = GetComponent<MeshRenderer>();
+        // fixedJoint = GetComponent<FixedJoint>();
+        // originalColor = handMesh.material.color;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-	    if(Input.GetAxis(triggerName) > 0.8f && !triggerHeld)
-	    {
-			triggerHeld = true;
-			handMesh.material.color = Color.green;
-
-			if (selectedObject != null)
-			{
-				// fixedJoint.connectedBody = selectedObject.GetComponent<Rigidbody>();
-				selectedObject.transform.SetParent(transform);
-				selectedObject.GetComponent<Rigidbody>().isKinematic = true;
-			}
-	    }
-	    else if(Input.GetAxis(triggerName) < 0.8f && triggerHeld)
-	    {
-		    triggerHeld = false;
-		    handMesh.material.color = originalColor;
-		    
-		    if (selectedObject != null)
-		    {
-			    // fixedJoint.connectedBody = null;
-			    selectedObject.GetComponent<Rigidbody>().isKinematic = false;
-			    selectedObject.transform.SetParent(null);
-		    }
-	    }
+	    Debug.Log($"Input.GetAxis(triggerName): {Input.GetAxis(triggerName)}");
+	    
+	    
+	    // animator.SetFloat("RightHandGrip", Input.GetAxis(triggerName));
+	    
+	  //   if(Input.GetAxis(triggerName) > 0.8f && !triggerHeld)
+	  //   {
+			// triggerHeld = true;
+			// handMesh.material.color = Color.green;
+	  //
+			// if (selectedObject != null)
+			// {
+			// 	// fixedJoint.connectedBody = selectedObject.GetComponent<Rigidbody>();
+			// 	selectedObject.transform.SetParent(transform);
+			// 	selectedObject.GetComponent<Rigidbody>().isKinematic = true;
+			// }
+	  //   }
+	  //   else if(Input.GetAxis(triggerName) < 0.8f && triggerHeld)
+	  //   {
+		 //    triggerHeld = false;
+		 //    handMesh.material.color = originalColor;
+		 //    
+		 //    if (selectedObject != null)
+		 //    {
+			//     // fixedJoint.connectedBody = null;
+			//     selectedObject.GetComponent<Rigidbody>().isKinematic = false;
+			//     selectedObject.transform.SetParent(null);
+		 //    }
+	  //   }
     }
 
     private void OnTriggerEnter(Collider other)
