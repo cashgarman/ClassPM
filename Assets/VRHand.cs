@@ -1,24 +1,20 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VRHand : MonoBehaviour
 {
     public string triggerName;
 
-    private MeshRenderer handMesh;
     private bool triggerHeld;
     private Color originalColor;
-    private GameObject selectedObject;
+    private GameObject highlightedObject;
     private Material selectedObjectMaterial;
     private Color selectedObjectOriginalColor;
-    // private GameObject grabbedObject;
-    private FixedJoint fixedJoint;
+    private Animator animator;
+    private GameObject heldObject;
 
     private void Start()
     {
-        handMesh = GetComponent<MeshRenderer>();
-        fixedJoint = GetComponent<FixedJoint>();
-        originalColor = handMesh.material.color;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,43 +22,68 @@ public class VRHand : MonoBehaviour
 	    if(Input.GetAxis(triggerName) > 0.8f && !triggerHeld)
 	    {
 			triggerHeld = true;
-			handMesh.material.color = Color.green;
+			animator.SetTrigger("Grip");
 
-			if (selectedObject != null)
+			if (highlightedObject != null)
 			{
-				// fixedJoint.connectedBody = selectedObject.GetComponent<Rigidbody>();
-				selectedObject.transform.SetParent(transform);
-				selectedObject.GetComponent<Rigidbody>().isKinematic = true;
+				GrabHighlightedObject();
 			}
 	    }
 	    else if(Input.GetAxis(triggerName) < 0.8f && triggerHeld)
 	    {
 		    triggerHeld = false;
-		    handMesh.material.color = originalColor;
+		    animator.SetTrigger("Ungrip");
 		    
-		    if (selectedObject != null)
+		    if (heldObject != null)
 		    {
-			    // fixedJoint.connectedBody = null;
-			    selectedObject.GetComponent<Rigidbody>().isKinematic = false;
-			    selectedObject.transform.SetParent(null);
+			    DropHeldObject();
 		    }
 	    }
     }
 
+    private void GrabHighlightedObject()
+    {
+	    Debug.Log($"Grabbing {highlightedObject.name}");
+	    highlightedObject.GetComponent<Rigidbody>().isKinematic = true;
+	    highlightedObject.transform.SetParent(transform);
+	    heldObject = highlightedObject;
+    }
+
+    private void DropHeldObject()
+    {
+	    Debug.Log($"Dropping {heldObject.name}");
+	    heldObject.GetComponent<Rigidbody>().isKinematic = false;
+	    heldObject.transform.SetParent(null);
+	    heldObject = null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-	    Debug.Log($"{name} entered the collider of {other.name}");
-	    selectedObjectMaterial = other.GetComponent<MeshRenderer>().material;
-	    selectedObjectOriginalColor = selectedObjectMaterial.color;
-	    selectedObjectMaterial.color = Color.red;
-	    selectedObject = other.gameObject;
+	    if (heldObject != null)
+	    {
+		    return;
+	    }
+
+	    HighlightObject(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-	    if (selectedObject != null)
-	    {
-		    other.GetComponent<MeshRenderer>().material.color = selectedObjectOriginalColor;
-	    }
+	    Debug.Log($"{name} left the collider of {other.name}");
+	    UnhighlightObject(other.gameObject);
+    }
+
+    private void HighlightObject(GameObject obj)
+    {
+	    Debug.Log($"{name} entered the collider of {obj.name}");
+	    selectedObjectMaterial = obj.GetComponent<MeshRenderer>().material;
+	    selectedObjectOriginalColor = selectedObjectMaterial.color;
+	    selectedObjectMaterial.color = Color.red;
+	    highlightedObject = obj.gameObject;
+    }
+
+    private void UnhighlightObject(GameObject obj)
+    {
+	    obj.GetComponent<MeshRenderer>().material.color = selectedObjectOriginalColor;
     }
 }

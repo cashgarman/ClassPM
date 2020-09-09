@@ -5,6 +5,8 @@ using UnityEngine;
 public class VRHandController : MonoBehaviour
 {
     private Animator animator;
+    public string gripAxis;
+    private bool isGripping;
 
     private void Start()
     {
@@ -13,13 +15,17 @@ public class VRHandController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        Debug.Log($"{gripAxis}: {Input.GetAxis(gripAxis)}");
+        
+        if(Input.GetAxis(gripAxis) > 0.5f && !isGripping)
         {
+            isGripping = true;
             animator.SetTrigger("Grip");
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        
+        if (Input.GetAxis(gripAxis) < 0.5f && isGripping)
         {
+            isGripping = false;
             animator.SetTrigger("Ungrip");
         }
     }
