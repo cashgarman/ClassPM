@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="vader" size="1.000000 1.185328" />
+    <ImageTarget name="manroe" size="1.000000 1.248092" />
+    <ImageTarget name="rock_you" size="1.000000 0.723577" />
+    <ImageTarget name="punk_rock" size="1.000000 0.986111" />
+    <ImageTarget name="dope" size="1.000000 0.494565" />
+    <ImageTarget name="rad_monkey" size="1.000000 1.187500" />
+    <ImageTarget name="keyboard_3" size="0.130000 0.063778" />
+    <ImageTarget name="keyboard_2" size="0.180000 0.087282" />
+    <ImageTarget name="keyboard" size="0.180000 0.076913" />
     <ImageTarget name="Wrist4" size="0.050000 0.047476" />
     <ImageTarget name="wrist3" size="0.050000 0.041743" />
     <ImageTarget name="wrist2" size="0.070000 0.063317" />
