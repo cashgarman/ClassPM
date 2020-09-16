@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ptc.vuforia.engine": {
-      "version": "9.3.3",
+      "version": "9.4.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -90,6 +90,13 @@
     },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.xr.oculus.standalone": {
+      "version": "2.38.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
