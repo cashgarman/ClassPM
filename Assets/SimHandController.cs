@@ -1,23 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SimHandController : MonoBehaviour
 {
     public float moveSpeed = 2f;
-
     public float rotateSpeed = 100f;
-
     public GameObject collidingObject;
-
     public GameObject heldObject;
+    
+    // CHANGES:
+    public StrokePainter strokePainter;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,13 +32,15 @@ public class SimHandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if(Input.GetMouseButtonDown(0))
         {
-            GrabObject();
+            // GrabObject();
+            strokePainter.StartStroke();
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        else if (Input.GetMouseButtonUp(0))
         {
-            ReleaseObject();
+            // ReleaseObject();
+            strokePainter.StopStroke();
         }
 
         #region Movement Functions
@@ -75,29 +74,5 @@ public class SimHandController : MonoBehaviour
         transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * Time.deltaTime * rotateSpeed, Space.Self);
 
         #endregion
-    }
-
-    private void GrabObject()
-    {
-        if(collidingObject != null)
-        {
-            collidingObject.transform.SetParent(transform);
-
-            heldObject = collidingObject;
-
-            heldObject.GetComponent<Rigidbody>().isKinematic = true;
-        }
-    }
-
-    private void ReleaseObject()
-    {
-        if (heldObject)
-        {
-            heldObject.transform.SetParent(null);
-
-            heldObject.GetComponent<Rigidbody>().isKinematic = false;
-
-            heldObject = null;
-        }
     }
 }

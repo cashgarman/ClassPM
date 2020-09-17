@@ -1,24 +1,26 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-	public MinuteHand minuteHand;
+    public Transform minuteHand;
 
-	private void Update()
-	{
-		if (Input.GetKey(KeyCode.Space))
-		{
-			Time.timeScale = 20f;
-		}
-		else
-		{
-			Time.timeScale = 1f;
-		}
-	}
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Time.timeScale = 20f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
 
-	public void OnMinutePassed()
-	{
-		minuteHand.OnAdvance();
-	}
+    internal void OnMinutePassed()
+    {
+        minuteHand.Rotate(0, 0, -360f / 60f);
+    }
 }
