@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Hornet" size="1.000000 0.562500" />
+    <ImageTarget name="Ghostbusters" size="1.000000 0.562500" />
+    <ImageTarget name="Zombie" size="1.000000 0.562500" />
+    <ImageTarget name="vader" size="1.000000 1.185328" />
     <ImageTarget name="manroe" size="1.000000 1.248092" />
     <ImageTarget name="rock_you" size="1.000000 0.723577" />
     <ImageTarget name="punk_rock" size="1.000000 0.986111" />

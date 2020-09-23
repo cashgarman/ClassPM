@@ -786,6 +786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f54133542460ac45a2208d5dd57007e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: Oculus_CrossPlatform_SecondaryIndexTrigger
+  strokePrefab: {fileID: 8779175010878679999, guid: df336112608fee9489dde0103711ab86,
+    type: 3}
 --- !u!1 &753905706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1234,7 @@ MonoBehaviour:
   rotateSpeed: 50
   collidingObject: {fileID: 0}
   heldObject: {fileID: 0}
+  strokePainter: {fileID: 0}
 --- !u!135 &1111113929
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1303,6 +1307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f54133542460ac45a2208d5dd57007e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  strokePrefab: {fileID: 0}
 --- !u!1 &1355630461
 GameObject:
   m_ObjectHideFlags: 0
