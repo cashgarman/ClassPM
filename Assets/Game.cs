@@ -7,8 +7,8 @@ using Vuforia;
 public class Game : MonoBehaviour
 {
     public LineRenderer path;
-    public ImageTargetBehaviour castle;
-    public ImageTargetBehaviour spawnPoint;
+    public Castle castle;
+    public Transform spawnPoint;
     public Enemy enemyPrefab;
 
     void Update()

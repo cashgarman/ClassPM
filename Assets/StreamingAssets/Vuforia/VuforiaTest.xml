@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="tower" size="1.000000 1.102410" />
+    <ImageTarget name="printed_origin" size="3.000000 0.411168" />
+    <ImageTarget name="printed_castle" size="1.000000 1.221996" />
+    <ImageTarget name="printed_zombie" size="1.000000 1.401496" />
+    <ImageTarget name="tower_defense" size="0.280000 0.209926" />
+    <ImageTarget name="Flying_Heart" size="1.000000 0.562500" />
+    <ImageTarget name="Hand" size="1.000000 0.562500" />
     <ImageTarget name="Hornet" size="1.000000 0.562500" />
     <ImageTarget name="Ghostbusters" size="1.000000 0.562500" />
     <ImageTarget name="Zombie" size="1.000000 0.562500" />
